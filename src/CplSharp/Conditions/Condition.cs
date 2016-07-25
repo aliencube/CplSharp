@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-
+using CplSharp.ConditionActions;
 using CplSharp.Definitions;
 using CplSharp.Exceptions;
 
@@ -54,9 +54,9 @@ namespace CplSharp.Conditions
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or sets the definition to apply.
+        /// Gets or sets the action to perform when the condition is true.
         /// </summary>
-        public BaseDefinition PolicyToApply { get; set; }
+        public BaseConditionAction Action { get; set; }
 
         /// <summary>
         /// Gets or sets the validation pattern for value.
