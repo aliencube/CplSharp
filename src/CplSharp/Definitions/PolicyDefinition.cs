@@ -10,6 +10,15 @@ namespace CplSharp.Definitions
     public abstract class PolicyDefinition : BaseDefinition
     {
         /// <summary>
+        /// Initialises a new instance of the <see cref="PolicyDefinition"/> class.
+        /// </summary>
+        /// <param name="name">Name of definition.</param>
+        protected PolicyDefinition(string name) : base(name)
+        {
+            this.DefinitionType = DefinitionType.Policy;
+        }
+
+        /// <summary>
         /// Gets or sets the layer type.
         /// </summary>
         public LayerType LayerType { get; set; }

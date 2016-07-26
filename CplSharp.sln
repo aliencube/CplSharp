@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CplSharp", "src\CplSharp\CplSharp.xproj", "{483FDA89-690A-48D5-9231-16B7AA06467B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A2C71E81-4361-4FAF-BC9B-4422FBD3AAE5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CplSharp.ConsoleApp", "test\CplSharp.ConsoleApp\CplSharp.ConsoleApp.xproj", "{4874F8A6-0F98-41A8-897F-8B9C1B2BC1B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,11 +31,16 @@ Global
 		{483FDA89-690A-48D5-9231-16B7AA06467B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{483FDA89-690A-48D5-9231-16B7AA06467B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{483FDA89-690A-48D5-9231-16B7AA06467B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4874F8A6-0F98-41A8-897F-8B9C1B2BC1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4874F8A6-0F98-41A8-897F-8B9C1B2BC1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4874F8A6-0F98-41A8-897F-8B9C1B2BC1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4874F8A6-0F98-41A8-897F-8B9C1B2BC1B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{483FDA89-690A-48D5-9231-16B7AA06467B} = {385FB904-D483-4FC4-AE77-94D9D36E3A35}
+		{4874F8A6-0F98-41A8-897F-8B9C1B2BC1B8} = {A2C71E81-4361-4FAF-BC9B-4422FBD3AAE5}
 	EndGlobalSection
 EndGlobal

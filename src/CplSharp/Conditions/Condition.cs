@@ -1,5 +1,6 @@
-﻿using System.Text.RegularExpressions;
-using CplSharp.ConditionActions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
+using CplSharp.Actions;
 using CplSharp.Definitions;
 using CplSharp.Exceptions;
 
@@ -56,7 +57,7 @@ namespace CplSharp.Conditions
         /// <summary>
         /// Gets or sets the action to perform when the condition is true.
         /// </summary>
-        public BaseConditionAction Action { get; set; }
+        public BaseAction Action { get; set; }
 
         /// <summary>
         /// Gets or sets the validation pattern for value.
@@ -93,8 +94,16 @@ namespace CplSharp.Conditions
                 throw new InvalidConditionValueException();
             }
 
-            var result = $"{this.Name.ToLowerInvariant()}=\"{this.Value}\"";
-            return result;
+            var sb = new StringBuilder();
+            sb.Append($"{this.Name.ToLowerInvariant()}=\"{this.Value}\"");
+
+            if (this.Action == null)
+            {
+                return sb.ToString();
+            }
+
+            sb.Append($" {this.Action}");
+            return sb.ToString();
         }
     }
 }

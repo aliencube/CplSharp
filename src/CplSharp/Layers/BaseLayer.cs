@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+using CplSharp.Actions;
 using CplSharp.Conditions;
 using CplSharp.Rules;
 
@@ -24,6 +25,11 @@ namespace CplSharp.Layers
         /// Gets or sets the list of rules.
         /// </summary>
         public List<BaseRule> Rules { get; set; }
+
+        /// <summary>
+        /// Gets or sets the action to perform at the last.
+        /// </summary>
+        public BaseAction Action { get; set; }
 
         /// <summary>
         /// Gets or sets the layer type.

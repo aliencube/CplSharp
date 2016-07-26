@@ -18,11 +18,6 @@ namespace CplSharp.Layers
         }
 
         /// <summary>
-        /// Gets or sets the proxy action.
-        /// </summary>
-        public string ProxyAction { get; set; }
-
-        /// <summary>
         /// Returns a string which represents the object instance.
         /// </summary>
         /// <param name="layer"><see cref="ProxyLayer"/> instance.</param>
@@ -43,7 +38,7 @@ namespace CplSharp.Layers
             sb.Append(this.RenderTag());
             sb.Append(this.RenderConditions());
             sb.Append(this.RenderRules());
-            sb.Append(this.RenderProxyAction());
+            sb.Append(this.RenderLayerAction());
             sb.AppendLine();
 
             return sb.ToString();
@@ -94,14 +89,14 @@ namespace CplSharp.Layers
             return sb.ToString();
         }
 
-        private string RenderProxyAction()
+        private string RenderLayerAction()
         {
-            if (string.IsNullOrWhiteSpace(this.ProxyAction))
+            if (this.Action == null)
             {
                 return null;
             }
 
-            return $"\t{this.ProxyAction}";
+            return $"\t{this.Action}";
         }
     }
 }

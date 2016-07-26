@@ -1,0 +1,15 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "frameworks": {
+    "net461": {}
+  },
+
+  "dependencies": {
+    "CplSharp": "1.0.0-*"
+  }
+}

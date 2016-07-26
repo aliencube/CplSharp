@@ -12,7 +12,8 @@ namespace CplSharp.Definitions
         /// <summary>
         /// Initialises a new instance of the <see cref="ProxyPolicyDefinition"/> class.
         /// </summary>
-        public ProxyPolicyDefinition()
+        /// <param name="name">Name of definition.</param>
+        public ProxyPolicyDefinition(string name) : base(name)
         {
             this.LayerType = LayerType.Proxy;
             this.Layers = new List<BaseLayer>();

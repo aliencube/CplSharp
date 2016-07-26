@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace CplSharp.ConditionActions
+namespace CplSharp.Actions
 {
     /// <summary>
-    /// This represents the base entity for the condition action to perform when the condition is true.
+    /// This represents the base entity for the action to perform.
     /// </summary>
-    public abstract class BaseConditionAction
+    public abstract class BaseAction
     {
         /// <summary>
-        /// Initialises a new instance of the <see cref="BaseConditionAction"/> class.
+        /// Initialises a new instance of the <see cref="BaseAction"/> class.
         /// </summary>
         /// <param name="type">Type of action.</param>
-        protected BaseConditionAction(Type type)
+        protected BaseAction(Type type)
         {
             if (type == null)
             {
@@ -32,21 +32,21 @@ namespace CplSharp.ConditionActions
         protected Type Type { get; }
 
         /// <summary>
-        /// <see cref="ConditionActionType"/> value.
+        /// <see cref="Actions.ActionType"/> value.
         /// </summary>
-        protected ConditionActionType ActionType { get; set; }
+        protected ActionType ActionType { get; set; }
     }
 
     /// <summary>
-    /// This represents the base entity for the condition action to perform when the condition is true.
+    /// This represents the base entity for the action to perform.
     /// </summary>
     /// <typeparam name="T">Type of action.</typeparam>
-    public abstract class BaseConditionAction<T> : BaseConditionAction where T : class
+    public abstract class BaseAction<T> : BaseAction where T : class
     {
         /// <summary>
-        /// Initialises a new instance of the <see cref="BaseConditionAction{T}"/> class.
+        /// Initialises a new instance of the <see cref="BaseAction{T}"/> class.
         /// </summary>
-        protected BaseConditionAction() : base(typeof(T))
+        protected BaseAction() : base(typeof(T))
         {
         }
 
@@ -55,7 +55,7 @@ namespace CplSharp.ConditionActions
         /// </summary>
         public new T Action
         {
-            get { return (T) Convert.ChangeType(base.Action, typeof(T)); }
+            get { return (T)base.Action; }
             set { base.Action = value; }
         }
     }
