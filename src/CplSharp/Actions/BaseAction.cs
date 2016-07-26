@@ -24,7 +24,7 @@ namespace CplSharp.Actions
         /// <summary>
         /// Gets or sets the action to be performed.
         /// </summary>
-        public object Action { get; set; }
+        public object Value { get; set; }
 
         /// <summary>
         /// Type of action.
@@ -53,10 +53,10 @@ namespace CplSharp.Actions
         /// <summary>
         /// Gets or sets the action to be performed.
         /// </summary>
-        public new T Action
+        public new T Value
         {
-            get { return (T)base.Action; }
-            set { base.Action = value; }
+            get { return (T)base.Value; }
+            set { base.Value = value; }
         }
     }
 }

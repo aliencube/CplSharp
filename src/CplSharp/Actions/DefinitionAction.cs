@@ -16,21 +16,12 @@ namespace CplSharp.Actions
         }
 
         /// <summary>
-        /// Returns a string which represents the object instance.
-        /// </summary>
-        /// <param name="instance"><see cref="DefinitionAction"/> instance.</param>
-        public static implicit operator string(DefinitionAction instance)
-        {
-            return instance.ToString();
-        }
-
-        /// <summary>
         /// Converts the instance to serialised string.
         /// </summary>
         /// <returns>Returns the serialised string converted from the instance.</returns>
         public override string ToString()
         {
-            return $"{this.Action.DefinitionType.ToString().ToLowerInvariant()}.{this.Action.Name}";
+            return $"{this.Value.DefinitionType}.{this.Value.Name}";
         }
     }
 }

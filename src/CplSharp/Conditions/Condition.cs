@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
+
 using CplSharp.Actions;
-using CplSharp.Definitions;
 using CplSharp.Exceptions;
 
 namespace CplSharp.Conditions
@@ -65,15 +65,6 @@ namespace CplSharp.Conditions
         public Regex ValidationPattern { get; set; }
 
         /// <summary>
-        /// Returns a string which represents the object instance.
-        /// </summary>
-        /// <param name="condition"><see cref="Condition"/> instance.</param>
-        public static implicit operator string(Condition condition)
-        {
-            return condition.ToString();
-        }
-
-        /// <summary>
         /// Converts the current object instance to a string.
         /// </summary>
         /// <returns>Returns a string which represents the object instance.</returns>
@@ -103,6 +94,7 @@ namespace CplSharp.Conditions
             }
 
             sb.Append($" {this.Action}");
+
             return sb.ToString();
         }
     }

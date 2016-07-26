@@ -12,18 +12,10 @@ namespace CplSharp.Layers
         /// <summary>
         /// Initialises a new instance of the <see cref="ProxyLayer"/> class.
         /// </summary>
-        public ProxyLayer()
+        /// <param name="comment">Layer comment value.</param>
+        public ProxyLayer(string comment = null) : base(comment)
         {
             this.LayerType = LayerType.Proxy;
-        }
-
-        /// <summary>
-        /// Returns a string which represents the object instance.
-        /// </summary>
-        /// <param name="layer"><see cref="ProxyLayer"/> instance.</param>
-        public static implicit operator string(ProxyLayer layer)
-        {
-            return layer.ToString();
         }
 
         /// <summary>
@@ -96,7 +88,10 @@ namespace CplSharp.Layers
                 return null;
             }
 
-            return $"\t{this.Action}";
+            var sb = new StringBuilder();
+            sb.AppendLine($"\t{this.Action}");
+
+            return sb.ToString();
         }
     }
 }

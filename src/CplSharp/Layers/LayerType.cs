@@ -1,53 +1,77 @@
+using CplSharp.Enums;
+
 namespace CplSharp.Layers
 {
     /// <summary>
     /// This specifies the layer type.
     /// </summary>
-    public enum LayerType
+    public class LayerType : TypeSafeEnum
     {
-        /// <summary>
-        /// Identifies no layer type is defined.
-        /// </summary>
-        Undefined = 0,
-
         /// <summary>
         /// Identifies the admin layer.
         /// </summary>
-        Admin = 1,
+        public static LayerType Admin = new LayerType("Admin", 1);
 
         /// <summary>
         /// Identifies the cache layer.
         /// </summary>
-        Cache = 2,
+        public static LayerType Cache = new LayerType("Cache", 2);
 
         /// <summary>
         /// Identifies the exception layer.
         /// </summary>
-        Exception = 3,
+        public static LayerType Exception = new LayerType("Exception", 3);
 
         /// <summary>
         /// Identifies the forward layer.
         /// </summary>
-        Forward = 4,
+        public static LayerType Forward = new LayerType("Forward", 4);
 
         /// <summary>
         /// Identifies the proxy layer.
         /// </summary>
-        Proxy = 5,
+        public static LayerType Proxy = new LayerType("Proxy", 5);
 
         /// <summary>
         /// Identifies the DNS proxy layer.
         /// </summary>
-        DnxProxy = 6,
+        public static LayerType DnxProxy = new LayerType("DNS-Proxy", 6);
 
         /// <summary>
         /// Identifies the SSL intercept layer.
         /// </summary>
-        SslIntercept = 7,
+        public static LayerType SslIntercept = new LayerType("SSL-Intercept", 7);
 
         /// <summary>
         /// Identifies the SSL layer.
         /// </summary>
-        Ssl = 8,
+        public static LayerType Ssl = new LayerType("SSL", 8);
+
+        /// <summary>
+        /// Initialises a new instance of the <see cref="LayerType"/> class.
+        /// </summary>
+        /// <param name="name">Name of definition.</param>
+        /// <param name="value">Value of definition.</param>
+        public LayerType(string name, int value) : base (name, value)
+        {
+        }
+
+        /// <summary>
+        /// Returns a string which represents the object instance.
+        /// </summary>
+        /// <param name="instance"><see cref="LayerType"/> instance.</param>
+        public static implicit operator string(LayerType instance)
+        {
+            return instance.ToString();
+        }
+
+        /// <summary>
+        /// Returns a string which represents the object instance.
+        /// </summary>
+        /// <param name="instance"><see cref="LayerType"/> instance.</param>
+        public static implicit operator int(LayerType instance)
+        {
+            return instance.Value;
+        }
     }
 }

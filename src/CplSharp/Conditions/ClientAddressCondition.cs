@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
+using CplSharp.Definitions;
+
 namespace CplSharp.Conditions
 {
     /// <summary>
@@ -23,6 +25,14 @@ namespace CplSharp.Conditions
 
             this.Name = "client.address";
             this.ValidationPattern = new Regex($@"({ValidationPatterns.ValidationPatterns.IpV4Address}|{ValidationPatterns.ValidationPatterns.IpV4Subnet}|{ValidationPatterns.ValidationPatterns.AlphaNumeric})");
+        }
+
+        /// <summary>
+        /// Initialises a new instance of the <see cref="ClientAddressCondition"/> class.
+        /// </summary>
+        /// <param name="definition">Instance inheriting <see cref="BaseDefinition"/>.</param>
+        public ClientAddressCondition(BaseDefinition definition) : this(definition.Name)
+        {
         }
     }
 }

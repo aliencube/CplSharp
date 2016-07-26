@@ -12,6 +12,17 @@ namespace CplSharp.Layers
     public abstract class BaseLayer
     {
         /// <summary>
+        /// Initialises a new instance of the <see cref="BaseLayer"/> class.
+        /// </summary>
+        /// <param name="comment">Layer comment value.</param>
+        protected BaseLayer(string comment = null)
+        {
+            this.Comment = comment;
+            this.Conditions = new List<Condition>();
+            this.Rules = new List<BaseRule>();
+        }
+
+        /// <summary>
         /// Gets or sets the comment of the layer.
         /// </summary>
         public string Comment { get; set; }
