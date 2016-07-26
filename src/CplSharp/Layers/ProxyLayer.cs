@@ -26,20 +26,19 @@ namespace CplSharp.Layers
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine();
-            sb.Append(this.RenderTag());
+            sb.Append(this.RenderHeader());
             sb.Append(this.RenderConditions());
-            sb.Append(this.RenderRules());
+            sb.Append(this.RenderSections());
             sb.Append(this.RenderLayerAction());
-            sb.AppendLine();
 
             return sb.ToString();
         }
 
-        private string RenderTag()
+        private string RenderHeader()
         {
             var sb = new StringBuilder();
             sb.Append($"<{this.LayerType}");
+
             if (!string.IsNullOrWhiteSpace(this.Comment))
             {
                 sb.Append($" \"{this.Comment}\"");
@@ -65,17 +64,17 @@ namespace CplSharp.Layers
             return sb.ToString();
         }
 
-        private string RenderRules()
+        private string RenderSections()
         {
-            if (this.Rules.IsNullOrEmpty())
+            if (this.Sections.IsNullOrEmpty())
             {
                 return null;
             }
 
             var sb =new StringBuilder();
-            foreach (var rule in this.Rules)
+            foreach (var section in this.Sections)
             {
-                sb.AppendLine($"\t{rule}");
+                sb.AppendLine($"\t{section}");
             }
 
             return sb.ToString();

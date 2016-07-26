@@ -50,8 +50,8 @@ namespace CplSharp.Layers
         /// <summary>
         /// Initialises a new instance of the <see cref="LayerType"/> class.
         /// </summary>
-        /// <param name="name">Name of definition.</param>
-        /// <param name="value">Value of definition.</param>
+        /// <param name="name">Name of layer.</param>
+        /// <param name="value">Value of layer.</param>
         public LayerType(string name, int value) : base (name, value)
         {
         }

@@ -2,7 +2,7 @@
 
 using CplSharp.Actions;
 using CplSharp.Conditions;
-using CplSharp.Rules;
+using CplSharp.Sections;
 
 namespace CplSharp.Layers
 {
@@ -19,7 +19,7 @@ namespace CplSharp.Layers
         {
             this.Comment = comment;
             this.Conditions = new List<Condition>();
-            this.Rules = new List<BaseRule>();
+            this.Sections = new List<BaseSection>();
         }
 
         /// <summary>
@@ -33,9 +33,9 @@ namespace CplSharp.Layers
         public List<Condition> Conditions { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of rules.
+        /// Gets or sets the list of sections.
         /// </summary>
-        public List<BaseRule> Rules { get; set; }
+        public List<BaseSection> Sections { get; set; }
 
         /// <summary>
         /// Gets or sets the action to perform at the last.

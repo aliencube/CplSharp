@@ -15,8 +15,8 @@ namespace CplSharp.Actions
         /// <summary>
         /// Initialises a new instance of the <see cref="ActionType"/> class.
         /// </summary>
-        /// <param name="name">Name of definition.</param>
-        /// <param name="value">Value of definition.</param>
+        /// <param name="name">Name of action.</param>
+        /// <param name="value">Value of action.</param>
         public ActionType(string name, int value) : base(name, value)
         {
         }
