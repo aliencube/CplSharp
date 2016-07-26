@@ -27,18 +27,63 @@ namespace CplSharp.Sections
         public override string ToString()
         {
             var sb = new StringBuilder();
+            sb.Append(this.RenderHeader());
+            sb.Append(this.RenderSectionGuard());
+            sb.Append(this.RenderConditions());
+            sb.Append(this.RenderSectionAction());
 
-            sb.AppendLine($"[{this.SectionType}]");
+            return sb.ToString();
+        }
 
-            if (this.Conditions.IsNullOrEmpty())
+        private string RenderHeader()
+        {
+            var sb = new StringBuilder();
+            sb.Append($"[{this.SectionType}]");
+
+            return sb.ToString();
+        }
+
+        private string RenderSectionGuard()
+        {
+            var sb = new StringBuilder();
+
+            if (this.SectionGuard == null)
             {
+                sb.AppendLine();
                 return sb.ToString();
             }
 
+            sb.Append(" ");
+            sb.AppendLine($"{this.SectionGuard}");
+
+            return sb.ToString();
+        }
+
+        private string RenderConditions()
+        {
+            if (this.Conditions.IsNullOrEmpty())
+            {
+                return null;
+            }
+
+            var sb = new StringBuilder();
             foreach (var condition in this.Conditions)
             {
                 sb.AppendLine($"\t{condition}");
             }
+
+            return sb.ToString();
+        }
+
+        private string RenderSectionAction()
+        {
+            if (this.Action == null)
+            {
+                return null;
+            }
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"\t{this.Action}");
 
             return sb.ToString();
         }

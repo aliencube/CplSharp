@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 using CplSharp.Definitions;
 using CplSharp.Extensions;
@@ -36,24 +37,24 @@ namespace CplSharp
         /// <returns>Returns the serialised string converted from the instance.</returns>
         public override string ToString()
         {
-            var result = string.Empty;
+            var sb = new StringBuilder();
 
             if (this.Proxy != null)
             {
-                result += this.Proxy;
+                sb.AppendLine($"{this.Proxy}");
             }
 
             if (this.Definitions.IsNullOrEmpty())
             {
-                return result;
+                return sb.ToString();
             }
 
             foreach (var definition in this.Definitions)
             {
-                result += definition;
+                sb.AppendLine($"{definition}");
             }
 
-            return result;
+            return sb.ToString();
         }
     }
 }

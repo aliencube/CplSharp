@@ -28,6 +28,11 @@ namespace CplSharp.Layers
         public string Comment { get; set; }
 
         /// <summary>
+        /// Gets or sets the condition as a layer guard.
+        /// </summary>
+        public Condition LayerGuard { get; set; }
+
+        /// <summary>
         /// Gets or sets the list of conditions.
         /// </summary>
         public List<Condition> Conditions { get; set; }

@@ -31,15 +31,14 @@ namespace CplSharp.Definitions
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine();
             sb.AppendLine($"define {this.DefinitionType} {this.Name}");
+
             foreach (var value in this.Values)
             {
                 sb.AppendLine($"\t{value}");
             }
 
             sb.AppendLine("end");
-            sb.AppendLine();
 
             return sb.ToString();
         }

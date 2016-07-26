@@ -6,7 +6,21 @@
   },
 
   "frameworks": {
-    "net461": {}
+    "net461": {},
+
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "dnxcore50",
+        "portable-net45+win8"
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.0",
+          "type": "platform"
+        }
+      }
+    }
   },
 
   "dependencies": {

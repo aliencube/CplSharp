@@ -28,15 +28,14 @@ namespace CplSharp.Definitions
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine();
             sb.AppendLine($"define {this.LayerType} {this.DefinitionType} {this.Name}");
+
             foreach (var layer in this.Layers)
             {
                 sb.AppendLine($"\t{layer}");
             }
 
             sb.AppendLine("end");
-            sb.AppendLine();
 
             return sb.ToString();
         }

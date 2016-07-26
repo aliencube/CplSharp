@@ -27,6 +27,7 @@ namespace CplSharp.Layers
             var sb = new StringBuilder();
 
             sb.Append(this.RenderHeader());
+            sb.Append(this.RenderLayerGuard());
             sb.Append(this.RenderConditions());
             sb.Append(this.RenderSections());
             sb.Append(this.RenderLayerAction());
@@ -43,7 +44,24 @@ namespace CplSharp.Layers
             {
                 sb.Append($" \"{this.Comment}\"");
             }
-            sb.AppendLine(">");
+
+            sb.Append(">");
+
+            return sb.ToString();
+        }
+
+        private string RenderLayerGuard()
+        {
+            var sb = new StringBuilder();
+
+            if (this.LayerGuard == null)
+            {
+                sb.AppendLine();
+                return sb.ToString();
+            }
+
+            sb.Append(" ");
+            sb.AppendLine($"{this.LayerGuard}");
 
             return sb.ToString();
         }
