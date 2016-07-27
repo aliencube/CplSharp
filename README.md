@@ -1,6 +1,16 @@
 # CplSharp #
 
-**CplSharp** provides a library that developers can deal [Blue Coat](https://www.bluecoat.com)'s proprietary language, CPL (Content Policy Language), with C# codes.
+**CplSharp** provides a library that converts objects written in C# to [Blue Coat](https://www.bluecoat.com)'s proprietary CPL (Content Policy Language) script.
+
+
+## Disclaimer ##
+
+**CplSharp** is not affiliated with [Blue Coat](https://www.bluecoat.com) in any way.
+
+
+## Version ##
+
+**CplSharp** is currently corresponding to SGOS 6.4.x. Its full reference manual can be found: [https://bto.bluecoat.com/sites/default/files/tech_pubs/SGOS_6.4.x_Content_Policy_Language_Reference.pdf](https://bto.bluecoat.com/sites/default/files/tech_pubs/SGOS_6.4.x_Content_Policy_Language_Reference.pdf)
 
 
 ## Contribution ##
